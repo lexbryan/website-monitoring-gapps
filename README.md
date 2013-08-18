@@ -7,8 +7,9 @@ Simple Monitoring script w/ Google Apps Script
 SETUP:
 
 1. Create a new Google Spreadsheet using the format as seen on the the screenshot or upload "Website Monitoring.gsheet" file.
-2. On your Spreadsheet goto Tools > Script Editor
-3. On your Script Editor create script files and place functions. Names won't matter.
+2. Rename your sheet to "Main".
+3. On your Spreadsheet goto Tools > Script Editor
+4. On your Script Editor create script files and place functions. Names won't matter.
 
 To Run:
 
