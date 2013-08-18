@@ -1,7 +1,10 @@
 website-monitoring-gapps
 ========================
 
-Simple Monitoring script w/ Google Apps Script
+Simple Monitoring script w/ Google Apps Script.
+
+How it works?
+It checks websites then sends notification (email) when the website returns a code other than 200.
 
 
 SETUP:

@@ -1,5 +1,5 @@
 function querySite(url) {
-  var ping = 666;
+  var ping = 99;
 
   try{
     ping = UrlFetchApp.fetch(url).getResponseCode();
@@ -9,19 +9,49 @@ function querySite(url) {
   return ping;
 }
 
-function getWebsiteStatus(website_list){
- var list = new Array();
- var ss = new getSS();
+function getCodeValue(code){
+  var code_list = {
+    "99" : "DNS Problem",
+    "100":"Continue","101":"Switching Protocols",
+    "200":"OK",
+    "201":"Created",
+    "202":"Accepted",
+    "203":"Non-Authoritative Information",
+    "204":"No Content",
+    "205":"Reset Content",
+    "206":"Partial Content",
+    "300":"Multiple Choices",
+    "301":"Moved Permanently",
+    "302":"Found",
+    "303":"See Other",
+    "304":"Not Modified",
+    "305":"Use Proxy",
+    "307":"Temporary Redirect",
+    "400":"Bad Request",
+    "401":"Unauthorized",
+    "402":"Payment Required",
+    "403":"Forbidden",
+    "404":"Not Found",
+    "405":"Method Not Allowed",
+    "406":"Not Acceptable",
+    "407":"Proxy Authentication Required",
+    "408":"Request Time-out",
+    "409":"Conflict",
+    "410":"Gone",
+    "411":"Length Required",
+    "412":"Precondition Failed",
+    "413":"Request Entity Too Large",
+    "414":"Request-URI Too Large",
+    "415":"Unsupported Media Type",
+    "416":"Requested range not satisfiable",
+    "417":"Expectation Failed",
+    "500":"Internal Server Error",
+    "501":"Not Implemented",
+    "502":"Bad Gateway",
+    "503":"Service Unavailable",
+    "504":"Gateway Time-out",
+    "505":"HTTP Version not supported"
+  };
 
- //header
- list.push(ss.message_list[0][1]+"\n");
-
- for(var i = 0; i<website_list.length; i++){
-   list.push(website_list[i]+" :: " + querySite(website_list[i]) +" :: "+ getMessage(querySite(website_list[i])));
- }
-
- //footer
- list.push("\n" + ss.message_list[2][1]);
-
- return list;
+  return code_list[code.toString()];
 }

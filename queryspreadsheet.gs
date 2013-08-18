@@ -6,14 +6,24 @@ function getSS(){
   this.website_list = sanitizeList1D(ss.getRange("B2:B").getValues());
 }
 
-function getMessage(code){
-  var ss = new getSS();
+function sanitizeList1D(list){
+  var clean_list = new Array();
 
-  var message_list = ss.message_list;
-
-  for(var i = 0; i < message_list.length; i++){
-      if(code.toString() == message_list[i][0]) return message_list[i][1];
+  for(var i=0; i<list.length; i++){
+    if(list[i] != "") clean_list.push(list[i]);
+    else break;
   }
 
-  return message_list[1][1];
+  return clean_list;
+}
+
+function sanitizeList2D(list){
+  var clean_list = new Array();
+
+  for(var i=0; i<list.length; i++){
+    if(list[i][0] != "") clean_list.push(list[i]);
+    else break;
+  }
+
+  return clean_list;
 }

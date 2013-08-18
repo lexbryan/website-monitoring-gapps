@@ -2,49 +2,21 @@ function main(){
   var ss = new getSS();
   var email_list = ss.email_list;
   var website_list = ss.website_list;
+  var custom_message_list = ss.message_list;
 
-  var website_status = getWebsiteStatus(website_list);
-  var message = createMessage(website_status);
+  for(var i = 0; i < website_list.length; i++){
+    var code = querySite(website_list[i]);
 
-  sendMessage(message,email_list);
-}
-
-function sanitizeList1D(list){
-  var clean_list = new Array();
-
-  for(var i=0; i<list.length; i++){
-    if(list[i] != "") clean_list.push(list[i]);
-    else break;
+    if(code != 200){
+      var status = getCodeValue(code);
+      var message = custom_message_list[0][1]+"\n\n"+website_list[i] + " returns an HTTP code " + code + ": " + status+"\n\n"+custom_message_list[1][1];
+      var subject = "Website Error (" + status +") :: " + website_list[i];
+      //Browser.msgBox(message);
+      sendMessage(message,subject,email_list);
+    }
   }
-
-  return clean_list;
 }
 
-function sanitizeList2D(list){
-  var clean_list = new Array();
-
-  for(var i=0; i<list.length; i++){
-    if(list[i][0] != "") clean_list.push(list[i]);
-    else break;
-  }
-
-  return clean_list;
+function sendMessage(message,subject,email_list){
+  var email = GmailApp.sendEmail(email_list, subject, message);
 }
-
-function createMessage(website_status){
-  var message = "";
-
-  for(var i = 0; i < website_status.length; i++){
-      message = message + website_status[i] + "\n";
-  }
-
-  return message;
-}
-
-function sendMessage(message,email_list){
-  var email = GmailApp.sendEmail(email_list, "Website Monitor", message)
-
-  return email;
-}
-
-
