@@ -17,6 +17,7 @@ To Run:
 2. To simulate cron jobs, you can use triggers. Goto Resources > Current project's triggers.
    Add triggers. You can also send notifications to your email whenever the script fails.
 
+Special note: You can add more emails, websites, and codes. But note that Google Apps Script has 5 mins max runtime. I'm not sure if this is still the case nowadays.
 
 Note: When prompted by Google to authorize app, just authorize it.
 Disclaimer: This is just a basic monitoring tool. Further development might be possible.
