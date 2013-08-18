@@ -25,4 +25,6 @@ Disclaimer: This is just a basic monitoring tool. Further development might be p
 For inquiries please punt me an email: lexusbry@gmail.com
 You might wanna extend this and share.
 
+FEATURE REQUEST AND BUG ISSUES: https://github.com/lexbryan/website-monitoring-gapps/issues/new
+
 TODO: SMS notification integration using Google Calendar API.
