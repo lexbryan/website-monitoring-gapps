@@ -24,7 +24,7 @@ function sendMessage(message,subject,email_list){
 
 function sendSms(subject){
   var now = new Date().getTime();
-  var event = CalendarApp.getOwnedCalendarById('l05s46vchba0vjf17fv6gn936c@group.calendar.google.com').createEvent(subject,
+  var event = CalendarApp.getOwnedCalendarById(<calendar_id>).createEvent(subject,
                             new Date(now+60000),
                             new Date(now+60000)).addSmsReminder(0);
 
