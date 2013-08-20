@@ -38,3 +38,6 @@ For inquiries please punt me an email: lexusbry@gmail.com
 You might wanna extend this and share.
 
 FEATURE REQUEST AND BUG ISSUES: https://github.com/lexbryan/website-monitoring-gapps/issues/new
+
+
+TODO: try() catch()
