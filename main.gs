@@ -19,7 +19,7 @@ function main(){
 }
 
 function sendMessage(message,subject,email_list){
-  var email = GmailApp.sendEmail(email_list, subject, message);
+  var email = GmailApp.sendEmail(email_list.toString(), subject, message);
 }
 
 function sendSms(subject){
