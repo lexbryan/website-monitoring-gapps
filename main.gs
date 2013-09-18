@@ -28,6 +28,6 @@ function sendSms(subject){
                             new Date(now+60000),
                             new Date(now+60000)).addSmsReminder(0);
 
-  Utilities.sleep(1000);
-  event.deleteEvent();
+  //Utilities.sleep(1000);
+  //event.deleteEvent();
 }
