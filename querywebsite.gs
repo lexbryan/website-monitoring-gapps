@@ -1,5 +1,5 @@
 function querySite(url) {
-  var ping = 00; 
+  var ping = 99; 
   
   try{
     ping = UrlFetchApp.fetch(url).getResponseCode();

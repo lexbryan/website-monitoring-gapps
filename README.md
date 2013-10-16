@@ -10,7 +10,7 @@ It checks websites then sends notification (email & sms) when the website return
 
 SETUP:
 
-1. Create a new Google Spreadsheet using the format as seen on the the screenshot "screenshot.png".
+1. Create a new Google Spreadsheet using the format as seen on the the screenshot "screenshot_gspread.png".
 2. Rename your sheet to "Main".
 3. On your Spreadsheet goto Tools > Script Editor
 4. On your Script Editor create script files and place functions. Names won't matter.
@@ -38,5 +38,3 @@ For inquiries please punt me an email: lexusbry@gmail.com
 You might wanna extend this and share.
 
 FEATURE REQUEST AND BUG ISSUES: https://github.com/lexbryan/website-monitoring-gapps/issues/new
-
-
