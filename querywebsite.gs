@@ -1,6 +1,6 @@
 function querySite(url) {
-  var ping = 99;
-
+  var ping = 00; 
+  
   try{
     ping = UrlFetchApp.fetch(url).getResponseCode();
   }
@@ -52,6 +52,6 @@ function getCodeValue(code){
     "504":"Gateway Time-out",
     "505":"HTTP Version not supported"
   };
-
+  
   return code_list[code.toString()];
 }
