@@ -14,7 +14,7 @@ function main(){
     if(code == 200) current_status = "up";
     else current_status = "down";
     
-    if(website_status[i] != current_status){
+    if(website_status[i] != current_status || current_status == "down"){
       var status = getCodeValue(code);
       var message = custom_message_list[0][1]+"\n\n"+website_list[i] + " returns an HTTP code " + code + ": " + status+"\n\n"+custom_message_list[1][1];
       var subject = "Website Status (" + current_status +") :: " + website_list[i];
